@@ -30,7 +30,7 @@ namespace TSN.PAMSSEM.ConsoleApp
                 Console.WriteLine(s);
             Console.Write(lastIndex);
         }
-        public static void WriteHorizontalSeperator(ushort linesBefore = 0, ushort linesAfter = 0)
+        public static void WriteHorizontalSeperator(ushort linesBefore = 0, ushort linesAfter = 1)
         {
             for (ushort i = 0; i < linesBefore; i++)
                 Console.WriteLine();
