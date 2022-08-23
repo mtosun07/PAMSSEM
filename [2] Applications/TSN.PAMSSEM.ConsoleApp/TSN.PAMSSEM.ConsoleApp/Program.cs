@@ -50,6 +50,9 @@ namespace TSN.PAMSSEM.ConsoleApp
             {
                 Console.Clear();
 
+                ConsoleHelper.WriteAppInfo();
+                ConsoleHelper.WriteHorizontalSeperator(linesAfter: 3);
+
                 Console.WriteLine("ALTERNATİFLER");
                 ConsoleHelper.WriteHorizontalSeperator();
                 Console.WriteLine("Alternatiflerin isimlerini giriniz.\nHer bir alternatif adını onaylamak için Enter'a, girişi tamamlamak için ESC'ye basınız.\n");
@@ -160,7 +163,7 @@ namespace TSN.PAMSSEM.ConsoleApp
         }
         private static void CalculateWithPAMSSEM(IList<string> alternatives, bool IsOrdinal, IList<(string Name, double Weight, double q, double p, double v, double? y, bool IsPositive)> attributes, double[,] decisionMatrix)
         {
-            if ((alternatives?.Count ?? 0) == 0 || (attributes?.Count ?? 0) == 0 || decisionMatrix == null || decisionMatrix.GetLength(0) != alternatives.Count || decisionMatrix.GetLength(1) != attributes.Count || alternatives.Any(x => string.IsNullOrWhiteSpace(x)) || attributes.Any(x => string.IsNullOrWhiteSpace(x.Name) || x.y.HasValue == IsOrdinal || (x.y ?? 3) < 3))
+            if ((alternatives?.Count ?? 0) == 0 || (attributes?.Count ?? 0) == 0 || decisionMatrix == null || decisionMatrix.GetLength(0) != alternatives.Count || decisionMatrix.GetLength(1) != attributes.Count || alternatives.Any(x => string.IsNullOrWhiteSpace(x)) || attributes.Any(x => string.IsNullOrWhiteSpace(x.Name) || x.y.HasValue == IsOrdinal || (x.y ?? 4) <= 3))
                 throw new ArgumentException();
 
             #region . Abstract .
