@@ -1,6 +1,6 @@
 # PAMSSEM
 
-PAMSSEM I & II yöntemlerinin Türkçe dilinde sunumu ve C# ve R Programa Dilleri ile uygulaması
+PAMSSEM I & II yöntemlerinin Türkçe dilinde sunumu ve C# ve R Programlama Dilleri ile uygulaması
 
 Çeviri & Düzenleme & Sunum	: Mustafa TOSUN
 
