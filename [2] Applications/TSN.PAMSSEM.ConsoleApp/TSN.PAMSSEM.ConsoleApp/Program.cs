@@ -1,14 +1,4 @@
-/*
-* PAMSSEM CALCULATOR
-* Version   : 1.0
-* Author    : MUSTAFA TOSUN, https://mustafatosun.net
-* Date      : 2022-08-24
-* Licence   : NONE
-*/
-
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -405,6 +395,9 @@ namespace TSN.PAMSSEM.ConsoleApp
             #region . Final Ranking: PAMSSEM II .
             Console.WriteLine("NİHAİ SIRALAMA: PAMSSEM II");
             ConsoleHelper.WriteHorizontalSeperator();
+
+            netFlows = new[] { 1, 3, 1D };
+
             var netFlows_ = netFlows.Select((x, i) => (Index: i, Value: x));
             var dist = netFlows.Distinct().ToArray();
             if (dist.Length == 1)
@@ -419,8 +412,8 @@ namespace TSN.PAMSSEM.ConsoleApp
                     var dic = arr.Where(x => x.Index > i).ToLookup(x => x.Value == arr[i].Value).ToDictionary(x => x.Key, x => x.ToArray());
                     if (dic.TryGetValue(true, out var I))
                         Console.WriteLine($"{alternatives[i]} I {string.Join(" I ", I.Select(x => alternatives[x.Index]))}");
-                    if (dic.TryGetValue(false, out var P1))
-                        Console.WriteLine(string.Join(" P ", P1.Concat(new[] { arr[i] }).OrderByDescending(x => x.Value).Select(x => alternatives[x.Index])));
+                    if (dic.TryGetValue(false, out var P))
+                        Console.WriteLine(string.Join(" P ", P.Concat(new[] { arr[i] }).OrderByDescending(x => x.Value).Select(x => alternatives[x.Index])));
                 }
             }
             ConsoleHelper.WriteHorizontalSeperator(linesAfter: 3);

@@ -1,14 +1,4 @@
-/*
-* PAMSSEM CALCULATOR
-* Version   : 1.0
-* Author    : MUSTAFA TOSUN, https://mustafatosun.net
-* Date      : 2022-08-24
-* Licence   : NONE
-*/
-
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
