@@ -406,8 +406,6 @@ namespace TSN.PAMSSEM.ConsoleApp
             Console.WriteLine("NİHAİ SIRALAMA: PAMSSEM II");
             ConsoleHelper.WriteHorizontalSeperator();
 
-            netFlows = new[] { 1, 3, 1D };
-
             var netFlows_ = netFlows.Select((x, i) => (Index: i, Value: x));
             var dist = netFlows.Distinct().ToArray();
             if (dist.Length == 1)
